@@ -9,10 +9,17 @@ const Hero = () => {
       style={{ backgroundImage: "url('/ball.png')" }}
     >
       <MaxWidthWrapper className="flex py-24 items-center justify-between flex-row">
-        <div className="text-center">
-          <h1 className="text-4xl text-shadow-md">
-            More than just a game. It's a lifestyle.
+        <div className="text-left space-y-4">
+          <h1 className="text-7xl font-meduim text-shadow-md">
+            More than <br /> just a game. <br /> It's a lifestyle.
           </h1>
+          <p>
+            Whether you’re just starting out, have played <br /> your whole life
+            or you're a Tour pro, <br /> your swing is like a fingerprint.
+          </p>
+          <Button className="bg-[#38cb89] text-black px-10 rounded-xl">
+            Shopping now
+          </Button>
         </div>
       </MaxWidthWrapper>
     </section>
