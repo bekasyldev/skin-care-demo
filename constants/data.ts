@@ -39,3 +39,36 @@ export const features = [
     imageUrl: "/polo.png"
   }
 ]
+
+export const categories = [
+  {
+    id: 1,
+    title: "Golf Clubs",
+    imageUrl: "/clubs.png"
+  },
+  {
+    id: 2,
+    title: "Golf Balls",
+    imageUrl: "/balls.png"
+  },
+  {
+    id: 3,
+    title: "Golf Bags",
+    imageUrl: "/bags.png"
+  },
+  {
+    id: 4,
+    title: "Clothing & Rainwear",
+    imageUrl: "/clothing.png"
+  },
+  {
+    id: 5,
+    title: "Footwear",
+    imageUrl: "/footwear.png"
+  },
+  {
+    id: 6,
+    title: "Accesserios",
+    imageUrl: "/accesserios.png"
+  },
+]
