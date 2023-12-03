@@ -71,4 +71,22 @@ export const categories = [
     title: "Accesserios",
     imageUrl: "/accesserios.png"
   },
+] as const;
+
+export const articles = [
+  {
+    id: 1,
+    title: "Air Jordan x Travis Scott Event",
+    imageUrl: "/air-jordan.png"
+  },
+  {
+    id: 2,
+    title: "The timeless classics on the green",
+    imageUrl: "/superstar.png"
+  },
+  {
+    id: 3,
+    title: "The 2023 Ryder Cup",
+    imageUrl: "/cup.png"
+  },
 ]
