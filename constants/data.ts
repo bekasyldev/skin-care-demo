@@ -90,3 +90,24 @@ export const articles = [
     imageUrl: "/cup.png"
   },
 ]
+
+export const instas = [
+  {
+    imageUrl: "/insta/insta-1.png"
+  },
+  {
+    imageUrl: "/insta/insta-2.png"
+  },
+  {
+    imageUrl: "/insta/insta-3.png"
+  },
+  {
+    imageUrl: "/insta/insta-4.png"
+  },
+  {
+    imageUrl: "/insta/insta-5.png"
+  },
+  {
+    imageUrl: "/insta/insta-6.png"
+  },
+]

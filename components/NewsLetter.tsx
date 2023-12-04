@@ -4,7 +4,7 @@ import { Label } from "./ui/label";
 
 const NewsLetter = () => {
   return (
-    <section className="h-[30vh] relative">
+    <section className="h-[360px] relative">
       <Image
         className="block z-0"
         src={"/banner-letter.png"}
