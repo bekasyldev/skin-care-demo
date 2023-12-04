@@ -30,7 +30,7 @@ const Article: React.FC<{ article: ArticleProps }> = ({ article }) => {
 
 const LatestArticles: React.FC = () => {
   return (
-    <section className="h-[40vh]">
+    <section className="h-[80vh]">
       <MaxWidthWrapper className="px-20 py-10 space-y-10">
         <div className="flex justify-between items-center">
           <h3 className="text-3xl font-semibold">Latest Articles</h3>

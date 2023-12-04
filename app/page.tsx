@@ -3,6 +3,7 @@ import Categories from "@/components/Categories";
 import Features from "@/components/Features";
 import Hero from "@/components/Hero";
 import LatestArticles from "@/components/LatestArticles";
+import NewsLetter from "@/components/NewsLetter";
 import ShopCollection from "@/components/ShopCollection";
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Banner />
       <ShopCollection />
       <LatestArticles />
+      <NewsLetter />
     </>
   );
 }
