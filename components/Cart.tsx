@@ -23,7 +23,7 @@ export default function Cart() {
       </SheetTrigger>
       <SheetContent className="bg-white">
         <SheetHeader>
-          <SheetTitle>Cart (0)</SheetTitle>
+          <SheetTitle>Cart ({cartTotal})</SheetTitle>
         </SheetHeader>
         <div className="flex w-full flex-col pr-6 my-5">
           <div className="space-y-4 pr-6">
