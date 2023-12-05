@@ -37,6 +37,18 @@ export const features = [
     stars: 5,
     price:  24.99,
     imageUrl: "/polo.png"
+  },
+  {
+    description: "G/FORE - Mens Left Glove Snow 2023",
+    stars: 5,
+    price: 30,
+    imageUrl: "/snow-glove.png"
+  },
+  {
+    description: "Utility Rover-R Double Strap Bag All Black - 2023",
+    stars: 5,
+    price: 209.99,
+    imageUrl: "/strap-bag.png"
   }
 ]
 
@@ -93,21 +105,27 @@ export const articles = [
 
 export const instas = [
   {
-    imageUrl: "/insta/insta-1.png"
+    id: 1,
+    imageUrl: "/insta/insta-1.png",
   },
   {
+    id: 2,
     imageUrl: "/insta/insta-2.png"
   },
   {
+    id: 3,
     imageUrl: "/insta/insta-3.png"
   },
   {
+    id: 4,
     imageUrl: "/insta/insta-4.png"
   },
   {
+    id: 5,
     imageUrl: "/insta/insta-5.png"
   },
   {
+    id: 6,
     imageUrl: "/insta/insta-6.png"
   },
 ]
