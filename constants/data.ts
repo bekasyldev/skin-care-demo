@@ -25,33 +25,6 @@ export const discounts = [
   }
 ] as const
 
-export const features = [
-  {
-    description: "Shark - Men's cabretta white golf glove",
-    stars: 5,
-    price:  19.00,
-    imageUrl: "/gloves.png"
-  },
-  {
-    description: "Greg Norman - Men's Shark Logo Golf Polo Shirt",
-    stars: 5,
-    price:  24.99,
-    imageUrl: "/polo.png"
-  },
-  {
-    description: "G/FORE - Mens Left Glove Snow 2023",
-    stars: 5,
-    price: 30,
-    imageUrl: "/snow-glove.png"
-  },
-  {
-    description: "Utility Rover-R Double Strap Bag All Black - 2023",
-    stars: 5,
-    price: 209.99,
-    imageUrl: "/strap-bag.png"
-  }
-]
-
 export const categories = [
   {
     id: 1,
