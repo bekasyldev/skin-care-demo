@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -11,6 +10,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
+import ProductCart from "./ProductCart";
 
 export default function Cart() {
   const fee = 1;
@@ -23,11 +23,12 @@ export default function Cart() {
       </SheetTrigger>
       <SheetContent className="bg-white">
         <SheetHeader>
-          <SheetTitle>Cart ({cartTotal})</SheetTitle>
+          <SheetTitle>Cart</SheetTitle>
         </SheetHeader>
-        <div className="flex w-full flex-col pr-6 my-5">
-          <div className="space-y-4 pr-6">
-            <Separator />
+        <div className="flex w-full flex-col my-5">
+          <div className="space-y-4">
+            <ProductCart />
+            <Separator className="bg-black" />
             <div className="space-y-1.5 text-sm">
               <div className="flex">
                 <span className="flex-1">Shipping</span>

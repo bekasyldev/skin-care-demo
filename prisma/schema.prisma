@@ -6,8 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider     = "mongodb"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 model Product {
@@ -19,10 +20,21 @@ model Product {
 
   categoryId String?   @map("categoryId") @db.ObjectId
   category   Category? @relation(fields: [categoryId], references: [id])
+
+  carts Cart[] @relation("ProductToCart")
 }
 
 model Category {
   id      String    @id @default(auto()) @map("_id") @db.ObjectId
   name    String    @unique
   courses Product[]
+}
+
+model Cart {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+
+  productId String @map("productId") @db.ObjectId
+  quantity  Int    @default(1)
+
+  product Product @relation("ProductToCart", fields: [productId], references: [id])
 }
