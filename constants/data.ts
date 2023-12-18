@@ -1,20 +1,20 @@
 export const links = [
     {
       name: "Home",
-      hash: "#home",
+      hash: "",
     },
     
     {
       name: "Shop",
-      hash: "#shop",
+      hash: "shop",
     },
     {
       name: "Product",
-      hash: "#product",
+      hash: "product",
     },
     {
       name: "Contact Us",
-      hash: "#contact",
+      hash: "contact",
     },
   ] as const;
 

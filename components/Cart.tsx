@@ -11,11 +11,24 @@ import { Separator } from "@/components/ui/separator";
 import { ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import ProductCart from "./ProductCart";
+import { db } from "@/lib/db";
 
-export default function Cart() {
-  const fee = 1;
+export default async function Cart() {
+  const carts = await db.cart.findMany({
+    include: {
+      product: {
+        select: {
+          price: true,
+        },
+      },
+    },
+  });
+  const fee = 10;
   let cartTotal = 0;
-  const productCount = 1;
+  {
+    carts.map((cart) => (cartTotal += cart.product.price));
+  }
+  cartTotal += fee;
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -36,11 +49,11 @@ export default function Cart() {
               </div>
               <div className="flex">
                 <span className="flex-1">Transaction Fee</span>
-                <span>{fee}</span>
+                <span>{fee}$</span>
               </div>
-              <div className="flex">
-                <span className="flex-1">Total</span>
-                <span>{cartTotal + fee}</span>
+              <div className="flex text-lg font-semibold">
+                <span className="flex-1 ">Total</span>
+                <span>{cartTotal}$</span>
               </div>
             </div>
           </div>
@@ -49,7 +62,7 @@ export default function Cart() {
           <SheetTrigger asChild>
             <Button
               asChild
-              className="bg-[#65806b] text-white rounded-xl w-full"
+              className="bg-[#65806b] hover:bg-[#465c4b] text-white rounded-xl w-full"
             >
               <Link href="/cart">Continue to Checkout</Link>
             </Button>

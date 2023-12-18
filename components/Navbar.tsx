@@ -3,6 +3,7 @@ import { Search, User } from "lucide-react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Cart from "./Cart";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
 
 const Navbar = () => {
   let productCount = 0;
@@ -18,7 +19,9 @@ const Navbar = () => {
           <div>
             <ul className="hidden md:flex flex-row gap-x-10">
               {links.map((link) => (
-                <li key={link.name}>{link.name}</li>
+                <Link key={link.name} href={`/${link.hash}`}>
+                  {link.name}
+                </Link>
               ))}
             </ul>
           </div>
