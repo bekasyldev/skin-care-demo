@@ -12,7 +12,11 @@ export const Cupon = () => {
       <div className="border-gray-200 border flex flex-row justify-between gap-x-6">
         <Label className="flex items-center space-x-2" htmlFor="coupon">
           <Ticket size={35} className="ml-3" />
-          <Input id="coupon" placeholder="Coupon code"></Input>
+          <Input
+            id="coupon"
+            className="border-white text-black placeholder:text-[#909597]"
+            placeholder="Coupon code"
+          ></Input>
           <Button className="font-semibold text-black" variant={"ghost"}>
             Apply
           </Button>

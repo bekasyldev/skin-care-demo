@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { db } from "@/lib/db";
+import { useCounterProduct } from "@/hooks/product";
 
 interface CountProps {
   quantity: number;
@@ -8,31 +9,28 @@ interface CountProps {
 }
 
 const ProductCount = ({ quantity, id }: CountProps) => {
+  const count = useCounterProduct(quantity);
   const [product, setProduct] = useState<any>(null); // Change `any` to your expected type for product
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedProduct = await db.product.findUnique({
-          where: {
-            id,
-          },
-        });
-        setProduct(fetchedProduct);
-      } catch (error) {
-        // Handle errors here
-        console.error("Error fetching product:", error);
-      }
-    };
-
-    fetchData();
-  }, [id]);
-
   return (
-    <div className="border border-black w-20 p-1 rounded-xl px-3 space-x-2">
-      <span>-</span>
-      <span>{quantity}</span>
-      <span>+</span>
+    <div className="border border-[#6c7275] text-[#6c7275] w-16 h-7 flex items-center justify-between rounded-[6px]">
+      <span
+        className="cursor-pointer w-8 h-full flex items-center justify-center"
+        onClick={() => {}}
+      >
+        -
+      </span>
+      <span className="h-full flex items-center justify-center w-8 text-black">
+        {quantity}
+      </span>
+      <span
+        className="cursor-pointer w-8 h-full flex items-center justify-center"
+        onClick={() => {
+          /* Implement increment logic */
+        }}
+      >
+        +
+      </span>
     </div>
   );
 };

@@ -29,9 +29,6 @@ const Navbar = () => {
             <Search />
             <User />
             <Cart />
-            <span className="bg-black w-6 h-6 text-white rounded-2xl text-center">
-              {productCount}
-            </span>
           </div>
           <MobileNav />
         </MaxWidthWrapper>

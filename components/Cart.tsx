@@ -23,37 +23,40 @@ export default async function Cart() {
       },
     },
   });
+  const productCount = carts.reduce((total, cart) => {
+    return total + cart.quantity;
+  }, 0);
   const fee = 10;
-  let cartTotal = 0;
-  {
-    carts.map((cart) => (cartTotal += cart.product.price));
-  }
-  cartTotal += fee;
+  const prodcutPrice = carts.reduce((total, cart) => {
+    return total + cart.product.price;
+  }, 0);
+  const totalPrice = prodcutPrice + fee;
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <ShoppingBag aria-hidden={true} />
+        <div className="flex space-x-2">
+          <ShoppingBag aria-hidden={true} />
+          <span className="bg-black w-6 h-6 text-white rounded-full text-center">
+            {productCount}
+          </span>
+        </div>
       </SheetTrigger>
       <SheetContent className="bg-white">
         <SheetHeader>
-          <SheetTitle>Cart</SheetTitle>
+          <SheetTitle className="text-2xl font-medium">Cart</SheetTitle>
         </SheetHeader>
         <div className="flex w-full flex-col my-5">
-          <div className="space-y-4">
+          <div className="space-y-8">
             <ProductCart />
             <Separator className="bg-black" />
             <div className="space-y-1.5 text-sm">
-              <div className="flex">
-                <span className="flex-1">Shipping</span>
-                <span>Free</span>
-              </div>
               <div className="flex">
                 <span className="flex-1">Transaction Fee</span>
                 <span>{fee}$</span>
               </div>
               <div className="flex text-lg font-semibold">
                 <span className="flex-1 ">Total</span>
-                <span>{cartTotal}$</span>
+                <span>{totalPrice}$</span>
               </div>
             </div>
           </div>

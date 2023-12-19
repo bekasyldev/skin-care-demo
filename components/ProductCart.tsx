@@ -1,6 +1,8 @@
 import { db } from "@/lib/db";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
+import ProductCount from "./prodcut/product-count";
+import { X } from "lucide-react";
 
 const ProductCart = async () => {
   const carts = await db.cart.findMany({
@@ -14,6 +16,7 @@ const ProductCart = async () => {
       },
     },
   });
+
   return (
     <div className="text-[15px]">
       {carts.map((cart) => (
@@ -27,11 +30,15 @@ const ProductCart = async () => {
                 width={80}
                 height={96}
               />
-              <p className="flex-wrap ml-2 font-semibold">
-                {cart.product.title}
-              </p>
+              <div className="flex flex-col ml-6 gap-y-2">
+                <p className="flex-wrap font-semibold">{cart.product.title}</p>
+                <ProductCount id={cart.id} quantity={cart.quantity} />
+              </div>
             </div>
-            <span className="font-semibold">${cart.product.price}.00</span>
+            <div className="flex flex-col items-end gap-y-2">
+              <span className="font-semibold">${cart.product.price}.00</span>
+              <X size={20} className="text-gray-400" />
+            </div>
           </div>
           <Separator className="bg-gray-200 mt-2 mb-8" />
         </div>

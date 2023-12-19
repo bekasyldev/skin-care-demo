@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 interface ShippingOption {
   name: string;
@@ -34,13 +35,13 @@ const CartSummary: React.FC = () => {
           <div
             key={index}
             className={`border-black border flex flex-row justify-between py-2 px-4 rounded-[4px] ${
-              selectedShipping === option ? "bg-gray-400" : ""
+              selectedShipping?.name === option.name ? "bg-gray-100" : ""
             }`}
             onClick={() => handleShippingSelection(option)}
           >
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 border border-black rounded-full flex items-center justify-center">
-                {selectedShipping === option && (
+                {selectedShipping?.name === option.name && (
                   <div className="w-2 h-2 bg-black rounded-full"></div>
                 )}
               </div>
@@ -62,7 +63,7 @@ const CartSummary: React.FC = () => {
         </div>
       </div>
       <Button className="w-full bg-black hover:bg-black text-white rounded-xl py-6">
-        Checkout
+        <Link href={"/cart/checkout"}>Checkout</Link>
       </Button>
     </div>
   );
