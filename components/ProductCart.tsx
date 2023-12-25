@@ -1,7 +1,7 @@
 import { db } from "@/lib/db";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import ProductCount from "./prodcut/product-count";
+import ProductCount from "./product/product-count";
 import { X } from "lucide-react";
 
 const ProductCart = async () => {

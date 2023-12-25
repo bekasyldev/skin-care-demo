@@ -41,19 +41,19 @@ export default async function Cart() {
           </span>
         </div>
       </SheetTrigger>
-      <SheetContent className="bg-white">
+      <SheetContent className="bg-white overflow-y-auto">
         <SheetHeader>
           <SheetTitle className="text-2xl font-medium">Cart</SheetTitle>
         </SheetHeader>
-        <div className="flex w-full flex-col my-5">
-          <div className="space-y-8">
+        <div className="flex w-full flex-col justify-between my-5">
+          <div className="flex flex-col justify-between">
             <ProductCart />
-            <Separator className="bg-black" />
             <div className="space-y-1.5 text-sm">
               <div className="flex">
-                <span className="flex-1">Transaction Fee</span>
-                <span>{fee}$</span>
+                <span className="flex-1">Subtotol</span>
+                <span className="font-semibold">{fee}$</span>
               </div>
+              <Separator className="bg-gray-200" />
               <div className="flex text-lg font-semibold">
                 <span className="flex-1 ">Total</span>
                 <span>{totalPrice}$</span>

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import StarRating from "./StarRating";
+import StarRating from "./product/product-star";
+import CartButton from "./CartButton";
 import { db } from "@/lib/db";
-import AddCart from "./AddCart";
 
 const Products = async () => {
   const products = await db.product.findMany();
@@ -20,7 +20,7 @@ const Products = async () => {
             <span className="absolute font-semibold text-xs top-2 left-4 bg-white text-black px-1 py-1 uppercase">
               Hot
             </span>
-            <AddCart />
+            <CartButton id={product.id} />
           </div>
 
           <div className="font-semibold">

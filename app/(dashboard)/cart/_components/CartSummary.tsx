@@ -28,7 +28,7 @@ const CartSummary: React.FC = () => {
   const total = selectedShipping ? subtotal + selectedShipping.price : subtotal;
 
   return (
-    <div className="w-96 border-black border rounded-[6px] px-6 py-4 space-y-4 my-10 text-left">
+    <div className="w-[380px] border-black border rounded-[6px] px-6 py-4 space-y-4 my-10 text-left">
       <h2 className="text-2xl">Cart Summary</h2>
       <div className="space-y-2">
         {shippingOptions.map((option, index) => (

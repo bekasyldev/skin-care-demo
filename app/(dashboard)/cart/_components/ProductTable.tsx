@@ -1,8 +1,7 @@
-import ProductCount from "@/components/prodcut/product-count";
+import ProductCount from "@/components/product/product-count";
 import { Separator } from "@/components/ui/separator";
 import { db } from "@/lib/db";
 import Image from "next/image";
-import React from "react";
 
 const ProductTable: React.FC = async () => {
   const carts = await db.cart.findMany({
@@ -19,39 +18,42 @@ const ProductTable: React.FC = async () => {
   });
 
   return (
-    <div className="my-10 flex-1">
-      <div className="flex items-center justify-between font-semibold">
-        <p>Product</p>
-        <ul className="flex flex-row gap-x-20">
-          <li>Quantity</li>
-          <li>Price</li>
-          <li>Subtotal</li>
-        </ul>
-      </div>
-      <Separator className="bg-black mt-8" />
-      <div>
-        {carts.map((cart) => (
-          <div key={cart.id} className="flex flex-col my-4">
-            <div className="flex flex-row items-center justify-between ">
-              <div className="flex flex-row items-center gap-x-4">
+    <div className="flex-[1.5]">
+      <table className="w-full table-fixed">
+        <thead>
+          <tr>
+            <th className="font-semibold text-left">Product</th>
+            <th className="font-semibold">Quantity</th>
+            <th className="font-semibold">Price</th>
+            <th className="font-semibold">Subtotal</th>
+          </tr>
+        </thead>
+        <div className="my-4 w-full">
+          <Separator className="bg-gray-400 w-full" />
+        </div>
+        <tbody>
+          {carts.map((cart) => (
+            <tr key={cart.productId}>
+              <td className="flex items-center gap-x-4">
                 <Image
+                  src={`/${cart.product.imageUrl}.png`}
+                  alt={cart.product.imageUrl}
                   width={80}
                   height={96}
-                  alt={cart.product.imageUrl}
-                  src={`/${cart.product.imageUrl}.png`}
                 />
                 <p>{cart.product.title}</p>
-              </div>
-              <div className="grid grid-cols-3 space-x-14">
-                <ProductCount id={cart.product.id} quantity={cart.quantity} />
-                <span>${cart.product.price}.00</span>
-                <span className="font-semibold">${cart.product.price}.00</span>
-              </div>
-            </div>
-            <Separator className="bg-gray-200 mt-6" />
-          </div>
-        ))}
-      </div>
+              </td>
+              <td className="pl-20">
+                <ProductCount quantity={cart.quantity} id={cart.productId} />
+              </td>
+              <td className="text-center">{cart.product.price}$</td>
+              <td className="text-center font-semibold">
+                {cart.product.price * cart.quantity}$
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

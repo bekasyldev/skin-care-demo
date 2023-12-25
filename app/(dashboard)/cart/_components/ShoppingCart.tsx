@@ -6,7 +6,7 @@ import { Cupon } from "@/components/Cupon";
 const ShoppingCart = () => {
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-row justify-between gap-x-20">
+      <div className="flex flex-row justify-between gap-x-10">
         <ProductTable />
         <CartSummary />
       </div>
