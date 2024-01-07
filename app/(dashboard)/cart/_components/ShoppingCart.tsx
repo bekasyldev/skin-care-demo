@@ -1,7 +1,7 @@
 import React from "react";
 import ProductTable from "./ProductTable";
 import CartSummary from "./CartSummary";
-import { Cupon } from "@/components/Cupon";
+import { Cupon } from "@/components/product/product-coupon";
 
 const ShoppingCart = () => {
   return (

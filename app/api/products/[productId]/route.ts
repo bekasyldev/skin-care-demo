@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request, { params }: { params: { id: string } }) {
   try {
+    console.log(`Product id: ${params.id}`)
     const product = await db.product.findUnique({
       where: {
         id: params.id,

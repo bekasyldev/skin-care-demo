@@ -4,15 +4,11 @@ import { Button } from "./ui/button";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-interface CartButtonProps {
-  id: string;
-}
-
-export default function CartButton({ id }: CartButtonProps) {
+export default function CartButton({ id }: { id: string }) {
   const router = useRouter();
   const onClick = async () => {
     try {
-      const response = await axios.post(`/api/product/${id}`);
+      const response = await axios.post(`/api/products/${id}`);
       router.refresh();
       toast.success("Added to the cart");
     } catch (error) {
